@@ -2,7 +2,7 @@
 
 <div align="center">
   <br />
-  <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank">
+  <a href="https://youtu.be/LMUsWY5alY0" target="_blank">
     <img width="1280" height="720" alt="NextJS Auth Full Course with Better Auth" src="./banner.png" />
   </a>
   <br />
@@ -17,7 +17,7 @@
   <h3 align="center">Build a Complete Authentication System with Next.js & Better Auth</h3>
   <div align="center">
     Follow the full video tutorial on 
-    <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank"><b>YouTube</b></a>
+    <a href="https://youtu.be/LMUsWY5alY0" target="_blank"><b>YouTube</b></a>
   </div>
   <br />
 </div>
@@ -43,7 +43,7 @@ In this comprehensive tutorial, you'll build a **production-ready authentication
 
 Better Auth is a modern, type-safe authentication library that provides a seamless developer experience with built-in support for multiple authentication methods, database adapters, and security best practices.
 
-🎥 Watch the full tutorial: [YouTube](https://youtu.be/YOUR_VIDEO_ID)
+🎥 Watch the full tutorial: [YouTube](https://youtu.be/LMUsWY5alY0)
 
 ---
 
@@ -381,4 +381,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-If you found this project helpful, please give it a ⭐ and consider subscribing to the [YouTube channel](https://youtube.com/@yourchannel) for more tutorials!
+If you found this project helpful, please give it a ⭐ and consider subscribing to the [YouTube channel](https://youtube.com/@pedrotechnologies) for more tutorials!
