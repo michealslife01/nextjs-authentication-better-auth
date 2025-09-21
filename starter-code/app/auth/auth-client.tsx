@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import {signIn, signUp } from "@/lib/action/auth-action"
+import { signInSocial } from "@/lib/action/auth-action";
+
 
 export default function AuthClientPage() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -20,6 +23,7 @@ export default function AuthClientPage() {
     setError("");
 
     try {
+      await signInSocial(provider);
       console.log("Logged in with", provider);
     } catch (err) {
       setError(
@@ -39,9 +43,19 @@ export default function AuthClientPage() {
 
     try {
       if (isSignIn) {
-        console.log("Signed in");
+        const result = await signIn(email, password);
+        if (!result?.user) {
+          setError("invalid email or password");
+          return;
+        }
+        router.push('/dashboard');
       } else {
-        console.log("Signed up");
+        const result = await signUp(email, password, name);
+        if (!result?.user) {
+          setError('failed to create account');
+          return;
+        }
+        router.push('/dashboard');
       }
     } catch (err) {
       setError(
