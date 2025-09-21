@@ -14,38 +14,10 @@
     <img src="https://img.shields.io/badge/-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
     <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   </div>
-  <h3 align="center">Build a Complete Authentication System with Next.js & Better Auth</h3>
-  <div align="center">
-    Follow the full video tutorial on 
-    <a href="https://youtu.be/LMUsWY5alY0" target="_blank"><b>YouTube</b></a>
-  </div>
-  <br />
+  <h3 align="center">A Complete Authentication System with Next.js & Better Auth</h3>
 </div>
 
-## 📋 Table of Contents
 
-1. [Introduction](#-introduction)
-2. [Tech Stack](#-tech-stack)
-3. [Features](#-features)
-4. [Quick Start](#-quick-start)
-5. [Project Structure](#-project-structure)
-6. [Environment Setup](#-environment-setup)
-7. [Database Setup](#-database-setup)
-8. [Screenshots](#-screenshots)
-9. [Deployment](#-deployment)
-10. [Useful Links](#-useful-links)
-
----
-
-## 🚀 Introduction
-
-In this comprehensive tutorial, you'll build a **production-ready authentication system** using **Next.js 15** and **Better Auth**. We cover everything from basic email/password authentication to social logins with Google and GitHub, session management, protected routes, and a complete dashboard interface.
-
-Better Auth is a modern, type-safe authentication library that provides a seamless developer experience with built-in support for multiple authentication methods, database adapters, and security best practices.
-
-🎥 Watch the full tutorial: [YouTube](https://youtu.be/LMUsWY5alY0)
-
----
 
 ## ⚙️ Tech Stack
 
@@ -353,32 +325,3 @@ npx prisma migrate deploy
 - [Vercel Deployment Guide](https://vercel.com/docs)
 - [Google OAuth Setup](https://developers.google.com/identity/protocols/oauth2)
 - [GitHub OAuth Setup](https://docs.github.com/en/developers/apps/building-oauth-apps)
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- [Better Auth](https://www.better-auth.com/) for the amazing authentication library
-- [Next.js](https://nextjs.org/) team for the incredible React framework
-- [Prisma](https://www.prisma.io/) for the excellent database toolkit
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-
----
-
-If you found this project helpful, please give it a ⭐ and consider subscribing to the [YouTube channel](https://youtube.com/@pedrotechnologies) for more tutorials!
