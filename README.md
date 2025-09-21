@@ -1,11 +1,6 @@
-# NextJS Auth Full Course with Better Auth
+# NextJS Authentication with Better Auth
 
 <div align="center">
-  <br />
-  <a href="https://youtu.be/LMUsWY5alY0" target="_blank">
-    <img width="1280" height="720" alt="NextJS Auth Full Course with Better Auth" src="./banner.png" />
-  </a>
-  <br />
   <div>
     <img src="https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
     <img src="https://img.shields.io/badge/-Better%20Auth-00D4AA?style=for-the-badge&logo=better-auth&logoColor=white" alt="Better Auth" />
@@ -14,314 +9,99 @@
     <img src="https://img.shields.io/badge/-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
     <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   </div>
-  <h3 align="center">A Complete Authentication System with Next.js & Better Auth</h3>
 </div>
 
+A modern authentication system built with Next.js 15, Better Auth, Prisma, and PostgreSQL.
 
+## Features
 
-## ⚙️ Tech Stack
+- Email/password authentication
+- Google & GitHub OAuth
+- Protected routes with middleware
+- Responsive UI with Tailwind CSS
+- Type-safe with TypeScript
+- Session management
+- Production ready
 
-- **Next.js 15** – App Router with server and client components
-- **Better Auth** – Modern, type-safe authentication library
-- **Prisma** – Type-safe database ORM with PostgreSQL
-- **PostgreSQL** – Robust relational database
-- **TailwindCSS** – Utility-first CSS framework
-- **TypeScript** – Type-safe development experience
-- **Vercel** – Recommended hosting & serverless deployment
+## Tech Stack
 
----
+- **Next.js 15** - App Router
+- **Better Auth** - Authentication library
+- **Prisma** - Database ORM
+- **PostgreSQL** - Database
+- **Tailwind CSS** - Styling
+- **TypeScript** - Type safety
 
-## ⚡️ Features
+## Quick Start
 
-- 🔐 **Email/Password Authentication** — Secure sign-up and sign-in
-- 🌐 **Social Authentication** — Google and GitHub OAuth integration
-- 👤 **User Management** — Complete user profile and session handling
-- 🛡️ **Protected Routes** — Middleware-based route protection
-- 📱 **Responsive UI** — Mobile-first design with Tailwind CSS
-- 🔒 **Session Management** — Secure session handling with cookies
-- 🎨 **Modern Dashboard** — Clean, professional user interface
-- ✅ **Production Ready** — Environment configuration and deployment ready
-- 🚀 **Type Safety** — Full TypeScript support throughout
-
----
-
-## 👌 Quick Start
-
-### Prerequisites
-
-- [Node.js (v18+)](https://nodejs.org/)
-- [PostgreSQL database](https://www.postgresql.org/) (or use [Neon](https://neon.tech/), [Supabase](https://supabase.com/), or [Railway](https://railway.app/))
-- [Google OAuth credentials](https://console.developers.google.com/)
-- [GitHub OAuth credentials](https://github.com/settings/developers)
-- [Vercel account](https://vercel.com/) for deployment
-
-### Clone and Install
-
+1. **Clone and install:**
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/nextjs-better-auth.git
-cd nextjs-better-auth
-
-# Install dependencies
+git clone https://github.com/michealslife01/nextjs-authentication-better-auth.git
+cd nextjs-authentication-better-auth/starter-code
 npm install
 ```
 
-### Environment Setup
-
-Create a `.env.local` file in the root directory:
-
-```bash
-# Database
+2. **Set up environment:**
+Create `.env.local`:
+```env
 DATABASE_URL="postgresql://username:password@localhost:5432/better_auth_db"
-
-# Better Auth Secret (generate a random string)
-BETTER_AUTH_SECRET="your-super-secret-key-here"
-
-# Google OAuth
+BETTER_AUTH_SECRET="your-secret-key"
 GOOGLE_CLIENT_ID="your-google-client-id"
 GOOGLE_CLIENT_SECRET="your-google-client-secret"
-
-# GitHub OAuth
 GITHUB_CLIENT_ID="your-github-client-id"
 GITHUB_CLIENT_SECRET="your-github-client-secret"
 ```
 
-### Database Setup
-
-1. **Create your PostgreSQL database** (locally or using a cloud provider)
-
-2. **Run Prisma migrations:**
-
+3. **Setup database:**
 ```bash
 npx prisma migrate dev --name init
-```
-
-3. **Generate Prisma client:**
-
-```bash
 npx prisma generate
 ```
 
-### Run Development Server
-
+4. **Run development server:**
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see the application.
+Visit [http://localhost:3000](http://localhost:3000)
 
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-nextjs-better-auth/
+starter-code/
 ├── app/
-│   ├── api/auth/[...all]/route.ts    # Better Auth API routes
-│   ├── auth/
-│   │   ├── auth-client.tsx           # Authentication UI component
-│   │   └── page.tsx                  # Auth page
-│   ├── dashboard/
-│   │   ├── dashboard-client.tsx      # Dashboard UI component
-│   │   └── page.tsx                  # Protected dashboard page
-│   ├── components/
-│   │   └── Navigation.tsx            # Navigation component
-│   ├── globals.css                   # Global styles
-│   ├── layout.tsx                    # Root layout
-│   └── page.tsx                      # Home page
+│   ├── api/auth/[...all]/route.ts    # Auth API routes
+│   ├── auth/                         # Auth pages
+│   ├── dashboard/                    # Protected dashboard
+│   └── components/                   # UI components
 ├── lib/
-│   ├── actions/
-│   │   └── auth-actions.ts           # Server actions for auth
-│   ├── auth.ts                       # Better Auth configuration
-│   └── generated/prisma/             # Generated Prisma client
-├── prisma/
-│   ├── migrations/                   # Database migrations
-│   └── schema.prisma                 # Database schema
-├── public/                           # Static assets
-└── package.json
+│   ├── actions/auth-actions.ts       # Server actions
+│   ├── auth.ts                       # Auth config
+│   └── generated/prisma/             # Prisma client
+└── prisma/
+    └── schema.prisma                 # Database schema
 ```
 
----
+## OAuth Setup
 
-## 🔧 Environment Setup
-
-### 1. Database Configuration
-
-The project uses Prisma with PostgreSQL. Update your `DATABASE_URL` in `.env.local`:
-
-```env
-DATABASE_URL="postgresql://username:password@localhost:5432/better_auth_db"
-```
-
-### 2. Better Auth Secret
-
-Generate a secure secret for Better Auth:
-
-```bash
-# Generate a random secret
-openssl rand -base64 32
-```
-
-### 3. OAuth Provider Setup
-
-#### Google OAuth Setup
-
+### Google OAuth
 1. Go to [Google Cloud Console](https://console.developers.google.com/)
-2. Create a new project or select existing
-3. Enable Google+ API
-4. Create OAuth 2.0 credentials
-5. Add authorized redirect URIs:
-   - `http://localhost:3000/api/auth/callback/google` (development)
-   - `https://yourdomain.com/api/auth/callback/google` (production)
+2. Create OAuth 2.0 credentials
+3. Add redirect URI: `http://localhost:3000/api/auth/callback/google`
 
-#### GitHub OAuth Setup
-
+### GitHub OAuth
 1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
-2. Create a new OAuth App
-3. Set Authorization callback URL:
-   - `http://localhost:3000/api/auth/callback/github` (development)
-   - `https://yourdomain.com/api/auth/callback/github` (production)
+2. Create OAuth App
+3. Set callback URL: `http://localhost:3000/api/auth/callback/github`
 
----
+## Deployment
 
-## 🗄️ Database Setup
+Deploy on Vercel:
+1. Push to GitHub
+2. Connect repository to Vercel
+3. Add environment variables
+4. Deploy
 
-The project includes a complete Prisma schema with the following models:
+## License
 
-- **User** - User accounts and profiles
-- **Session** - User sessions and tokens
-- **Account** - OAuth provider accounts
-- **Verification** - Email verification tokens
-
-### Database Schema
-
-```prisma
-model User {
-  id            String    @id
-  name          String
-  email         String
-  emailVerified Boolean
-  image         String?
-  createdAt     DateTime
-  updatedAt     DateTime
-  sessions      Session[]
-  accounts      Account[]
-
-  @@unique([email])
-  @@map("user")
-}
-
-model Session {
-  id        String   @id
-  expiresAt DateTime
-  token     String
-  createdAt DateTime
-  updatedAt DateTime
-  ipAddress String?
-  userAgent String?
-  userId    String
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@unique([token])
-  @@map("session")
-}
-
-model Account {
-  id                    String    @id
-  accountId             String
-  providerId            String
-  userId                String
-  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  accessToken           String?
-  refreshToken          String?
-  idToken               String?
-  accessTokenExpiresAt  DateTime?
-  refreshTokenExpiresAt DateTime?
-  scope                 String?
-  password              String?
-  createdAt             DateTime
-  updatedAt             DateTime
-
-  @@map("account")
-}
-
-model Verification {
-  id         String    @id
-  identifier String
-  value      String
-  expiresAt  DateTime
-  createdAt  DateTime?
-  updatedAt  DateTime?
-
-  @@map("verification")
-}
-```
-
----
-
-## 🖼️ Screenshots
-
-### Authentication Page
-
-<img width="998" height="850" alt="Authentication Page" src="https://github.com/user-attachments/assets/placeholder" />
-
-### Dashboard
-
-<img width="958" height="840" alt="Dashboard" src="https://github.com/user-attachments/assets/placeholder" />
-
-### Social Login Options
-
-<img width="1811" height="924" alt="Social Login" src="https://github.com/user-attachments/assets/placeholder" />
-
----
-
-## ☁️ Deployment
-
-### Deploy on Vercel
-
-1. **Push your code to GitHub**
-
-2. **Connect to Vercel:**
-
-   - Go to [Vercel](https://vercel.com/)
-   - Import your GitHub repository
-   - Configure environment variables
-
-3. **Set Environment Variables in Vercel:**
-
-   ```
-   DATABASE_URL=your-production-database-url
-   BETTER_AUTH_SECRET=your-production-secret
-   GOOGLE_CLIENT_ID=your-google-client-id
-   GOOGLE_CLIENT_SECRET=your-google-client-secret
-   GITHUB_CLIENT_ID=your-github-client-id
-   GITHUB_CLIENT_SECRET=your-github-client-secret
-   ```
-
-4. **Update OAuth Redirect URLs:**
-
-   - Update your Google OAuth app with production callback URL
-   - Update your GitHub OAuth app with production callback URL
-
-5. **Deploy:**
-   - Click "Deploy" in Vercel
-   - Your app will be live at `https://your-app.vercel.app`
-
-### Database Migration in Production
-
-```bash
-# Run migrations in production
-npx prisma migrate deploy
-```
-
----
-
-## 🔗 Useful Links
-
-- [Better Auth Documentation](https://www.better-auth.com/)
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Prisma Documentation](https://www.prisma.io/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Vercel Deployment Guide](https://vercel.com/docs)
-- [Google OAuth Setup](https://developers.google.com/identity/protocols/oauth2)
-- [GitHub OAuth Setup](https://docs.github.com/en/developers/apps/building-oauth-apps)
+MIT
